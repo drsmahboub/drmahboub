@@ -12,7 +12,7 @@ html {
   box-sizing: border-box;
 }
 body{
-  font-family: fontsans,Tahoma,Arial;
+  font-family: IranSans,Tahoma,Arial;
   font-weight: 300;
   line-height: 1.5em;
   background: none;
@@ -577,7 +577,7 @@ button.close {
 .form-control{direction: rtl;text-align: right}
 .container{direction: rtl;}
 .padding{padding:15px}
-.tooltip{font-family: fontsans,tahoma}
+.tooltip{font-family: IranSans,tahoma}
 .loading{position: absolute;z-index: 10;text-align: center;width:100%;top:0;color: #28b6d5;right:0;display: none;height: calc(100vh - 230px);background:#ffffff;  }
 #close_autopm{float:left;cursor: pointer;opacity: 0.5;margin-left: -5px;}
 #close_autopm svg{float:left;cursor: pointer;opacity: 0.5;margin:0 6px 0 -2px !important;fill: #333333;}
