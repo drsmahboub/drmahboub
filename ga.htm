@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GA by LMP</title>
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <form action="JavaScript:CalculateGA()">
+      Day:<br>
+      <select id="day">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select><br>
+      Month:<br>
+      <select id="month">
+        <option value="1">Farvardin</option>
+        <option value="2">Ordibehesht</option>
+        <option value="3">Khordad</option>
+        <option value="4">Tir</option>
+        <option value="5">Mordad</option>
+        <option value="6">Shahrivar</option>
+        <option value="7">Mehr</option>
+        <option value="8">Aban</option>
+        <option value="9">Azar</option>
+        <option value="10">Dey</option>
+        <option value="11">Bahman</option>
+        <option value="12">Esfand</option>
+      </select><br>
+      <p id="ext"><button type="submit">Calculate</button></p>
+<!--<p id="ultrasound" style="visibility:hidden;" hidden>Week(s):<br>
+  <select id="weeks">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+    <option value="31">31</option>
+    <option value="32">32</option>
+    <option value="33">33</option>
+    <option value="34">34</option>
+    <option value="35">35</option>
+    <option value="36">36</option>
+    <option value="37">37</option>
+    <option value="38">38</option>
+    <option value="39">39</option>
+    <option value="40">40</option>
+    <option value="41">41</option>
+    <option value="42">42</option>
+  </select><br>
+  Day(s):<br>
+  <select id="days">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select><br>
+  <button type="submit">Calculate</button></p>
+  <input type="radio" value="LMP" name="type" onclick="document.getElementById('ultrasound').style.visibility = 'hidden';"> LMP
+  <input type="radio" value="US" name="type" onclick="document.getElementById('ultrasound').style.visibility = 'visible';"> Ultrasound<br></p>-->
+    </form>
+    <p id="result"></p>
+    <script>
+      function CalculateGA() {
+        //hide extra days on month select
+        var day = parseInt(document.getElementById("day").options[document.getElementById("day").selectedIndex].value);
+        var month = parseInt(document.getElementById("month").options[document.getElementById("month").selectedIndex].value);
+        switch(month) {
+          case 1:
+            if (day < 13) {
+              month = 2;
+              day += 19;
+            } else {
+              month = 3;
+              day -= 12;
+            }
+            break;
+          case 2:
+            if (day < 12) {
+              month = 3;
+              day += 19;
+            } else {
+              month = 4;
+              day -= 11;
+            }
+            break;
+          case 3:
+            if (day < 12) {
+              month = 4;
+              day += 20;
+            } else {
+              month = 5;
+              day -= 11;
+            }
+            break;
+          case 4:
+            if (day < 11) {
+              month = 5;
+              day += 20;
+            } else {
+              month = 6;
+              day -= 10;
+            }
+            break;
+          case 5:
+            if (day < 11) {
+              month = 6;
+              day += 21;
+            } else {
+              month = 7;
+              day -= 10;
+            }
+            break;
+          case 6:
+            if (day < 11) {
+              month = 7;
+              day += 21;
+            } else {
+              month = 8;
+              day -= 10;
+            }
+            break;
+          case 7:
+            if (day < 9) {
+              month = 8;
+              day += 22;
+            } else {
+              month = 9;
+              day -= 8;
+            }
+            break;
+          case 8:
+            if (day < 10) {
+              month = 9;
+              day += 22;
+            } else {
+              month = 10;
+              day -= 9;
+            }
+            break;
+          case 9:
+            if (day < 10) {
+              month = 10;
+              day += 21;
+            } else {
+              month = 11;
+              day -= 9;
+            }
+            break;
+          case 10:
+            if (day < 11) {
+              month = 11;
+              day += 21;
+            } else {
+              month = 0;
+              day -= 10;
+            }
+            break;
+          case 11:
+            if (day < 12) {
+              month = 0;
+              day += 20;
+            } else {
+              month = 1;
+              day -= 11;
+            }
+            break;
+          case 12:
+            if (day < 11) {
+              month = 1;
+              day += 19;
+            } else {
+              month = 2;
+              day -= 10;
+            }
+            break;
+        }
+        var months = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var today = new Date();
+        var days = 0;
+        if (month != today.getMonth()) {
+          days = months[month] - day;
+        } else {
+          days -= day;
+        }
+        if (month < today.getMonth()) {
+          month++;
+          for (i = month; i < today.getMonth(); i++) {
+            days += months[i];
+          }
+        }
+        if (month > today.getMonth()) {
+          month++;
+          for (i = month; i < 12; i++) {
+            days += months[i];
+          }
+          for (i = 0; i < today.getMonth(); i++) {
+            days += months[i];
+          }
+        }
+        days += today.getDate();
+        // week(s) & day(s)
+        document.getElementById("result").innerHTML = "<b>GA by LMP:</b><br>" + Math.floor(days/7) + " week(s)" + " & " + days%7 + " day(s)";
+      }
+  </script>
+</body>
+</html>
